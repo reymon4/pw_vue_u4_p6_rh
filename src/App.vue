@@ -1,15 +1,16 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+<insertar-estudiante/>
+<eliminar-estudiante/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import InsertarEstudiante from './pages/InsertarEstudiante.vue'
+import EliminarEstudiante from './pages/EliminarEstudiante.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    InsertarEstudiante,
+    EliminarEstudiante
   }
 }
 </script>

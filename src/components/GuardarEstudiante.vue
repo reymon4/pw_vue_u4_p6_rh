@@ -1,9 +1,9 @@
 <template>
   <div class="container">
     <div class="formulario">
-      <header>Datos Estudiante</header>
+      <header>Ingresar datos</header>
       <section>
-        <form class="form">
+        <div class="form">
           <p type="Nombre">
             <input v-model="nombre" type="text" />
           </p>
@@ -17,13 +17,14 @@
             <input v-model="genero" type="text" />
           </p>
           <p type="Fecha de Nacimiento">
-            <input v-model="fecha" type="datetime-local" />
+            <input v-model="fechaNacimiento" type="datetime-local" />
           </p>
           <div class="botonCrear">
             <button @click="crear">Crear</button>
           </div>
-        </form>
+           </div>
       </section>
+   
     </div>
   </div>
 </template>
@@ -36,7 +37,7 @@ export default {
       nombre: null,
       cedula: null,
       genero: null,
-      fecha: null,
+      fechaNacimiento: null,
     };
   },
   methods: {
@@ -48,6 +49,7 @@ export default {
         genero: this.genero,
         cedula: this.cedula,
       };
+      console.log(bodyEstudiante);
       const data = await guardarFachada(bodyEstudiante);
       console.log(data);
     },

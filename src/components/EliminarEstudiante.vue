@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <div class="formulario">
-        <header>Borrar Estudiante</header>
+        <header>Borrar</header>
         <section>
           <form class="form">
             <p type="Cédula">

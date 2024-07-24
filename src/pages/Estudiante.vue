@@ -1,6 +1,6 @@
 <template>
   
-  <h1>Pagina de Estudiantes</h1>
+  <h1>Estudiante</h1>
   <div class="container">
   <GuardarEstudianteVue></GuardarEstudianteVue>
   <ActualizarEstudianteVue></ActualizarEstudianteVue>

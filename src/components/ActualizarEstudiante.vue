@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="formulario">
-      <header>Datos Estudiante</header>
+      <header>Actualizar datos</header>
       <section>
         <div class="form">
           <p type="Nombre">
@@ -17,7 +17,7 @@
             <input v-model="genero" type="text" />
           </p>
           <p type="Fecha de Nacimiento">
-            <input v-model="fecha" type="datetime-local" />
+            <input v-model="fechaNacimiento" type="datetime-local" />
           </p>
           <div class="botonBuscar">
             <button @click="consultar">Buscar</button>
@@ -42,7 +42,7 @@ export default {
       cedula: null,
       genero: null,
       apellido: null,
-      fecha: null,
+      fechaNacimiento: null,
       nombre: null,
     };
   },
@@ -57,7 +57,7 @@ export default {
       this.genero = data.genero;
       this.apellido = data.apellido;
       this.nombre = data.nombre;
-      this.fecha = data.fecha;
+      this.fechaNacimiento = data.fechaNacimiento;
     },
 
     //1998-08-31T00:00:00

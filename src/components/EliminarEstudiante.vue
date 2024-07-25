@@ -1,19 +1,16 @@
 <template>
-    <div class="container">
-      <div class="formulario">
-        <header>Borrar</header>
-        <section>
-          <form class="form">
-            <p type="Cédula">
-              <input type="text" v-model="cedula" />
-            </p>
-            <div class="botonEliminar">
-              <button @click="eliminar">Borrar</button>
-            </div>
-          </form>
-        </section>
-      </div>
+ <div class="container">
+        <header>Eliminar Estudiante</header>
+         <div class="form">
+        <div class="form-group">
+            <label for="cedula">Cédula</label>
+            <input type="text" id="cedula" />
+        </div>
+        <div class="form-buttons">
+            <button @click="eliminar">Eliminar</button>
+        </div>
     </div>
+  </div>
   </template>
   
   <script>

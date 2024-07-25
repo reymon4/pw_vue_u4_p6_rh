@@ -1,32 +1,32 @@
 <template>
   <div class="container">
-    <div class="formulario">
+    
       <header>Actualizar datos</header>
-      <section>
-        <div class="form">
-          <p type="Nombre">
-            <input v-model="nombre" type="text" />
-          </p>
-          <p type="Apellido">
-            <input v-model="apellido" type="text" />
-          </p>
-          <p type="Cédula">
-            <input v-model="cedula" type="text" />
-          </p>
-          <p type="Género">
-            <input v-model="genero" type="text" />
-          </p>
-          <p type="Fecha de Nacimiento">
-            <input v-model="fechaNacimiento" type="datetime-local" />
-          </p>
-          <div class="botonBuscar">
-            <button @click="consultar">Buscar</button>
-          </div>
-          <div class="botonActualizar">
-            <button @click="actualizar">Actualizar</button>
-          </div>
-        </div>
-      </section>
+      <div class="form">
+        <div class="form-group">
+        <label for="cedula">Cédula</label>
+        <input v-model="cedula" type="text" id="cedula" />
+      </div>
+      <div class="form-group">
+        <label  for="nombre">Nombre</label>
+        <input  v-model="nombre"  type="text" id="nombre" />
+      </div>
+      <div class="form-group">
+        <label for="apellido">Apellido</label>
+        <input type="text" id="apellido" v-model="apellido"/>
+      </div>
+      <div class="form-group">
+        <label for="fechaNacimiento">Fecha de Nacimiento</label>
+        <input v-model="fechaNacimiento" type="datetime-local" id="fechaNacimiento" />
+      </div>
+      <div class="form-group">
+        <label for="genero">Género</label>
+        <input type="text" v-model="genero" id="genero" />
+      </div>
+      <div class="form-buttons">
+        <button @click="consultar">Guardar</button>
+        <button @click="actualizar">Actualizar</button>
+      </div>
     </div>
   </div>
 </template>
@@ -78,22 +78,28 @@ export default {
 };
 </script>
 <style>
-
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 button {
   width: 100px;
   padding: 10px 20px;
-  background-color: #8b42d8;
+  background-color: #6bb7ee;
   color: white;
   border-radius: 12px;
   cursor: pointer;
   border: none;
 }
-.botonBuscar {
+.form-group {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  margin-top: 25px;
-  padding: 12px;
+  flex-direction: column;
+  margin-bottom: 8%;
+  text-align: left;
+}
+.form-buttons {
+  display: flex;
+  justify-content: space-around;
 }
 </style>

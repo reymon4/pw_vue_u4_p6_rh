@@ -1,14 +1,14 @@
 <template>
-<estudiante-vue></estudiante-vue>
+<router-view></router-view>
 </template>
 
 <script>
-import EstudianteVue from './pages/Estudiante.vue'
+import Welcome from './pages/Welcome.vue'
 
 export default {
   name: 'App',
   components: {
-    EstudianteVue
+    Welcome
   }
 }
 </script>

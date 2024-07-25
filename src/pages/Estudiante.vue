@@ -1,7 +1,7 @@
 <template>
   
   <h1>Estudiante</h1>
-  <div class="container">
+  <div class="conta">
   <GuardarEstudianteVue></GuardarEstudianteVue>
   <ActualizarEstudianteVue></ActualizarEstudianteVue>
   <EliminarEstudianteVue></EliminarEstudianteVue>
@@ -24,8 +24,8 @@ export default {
    
 </script>
 
-<style>
-.container {
+<style scoped>
+.conta {
   display: flex;
   justify-content: center;
  flex-direction: row;

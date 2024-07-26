@@ -1,23 +1,26 @@
 <template>
-   <div class="container">
-   
-      <header>Ingresar datos</header>
-       <div class="form">
+  <div class="container">
+    <header>Ingresar datos</header>
+    <div class="form">
       <div class="form-group">
         <label for="cedula">Cédula</label>
         <input v-model="cedula" type="text" id="cedula" />
       </div>
       <div class="form-group">
-        <label  for="nombre">Nombre</label>
-        <input  v-model="nombre"  type="text" id="nombre" />
+        <label for="nombre">Nombre</label>
+        <input v-model="nombre" type="text" id="nombre" />
       </div>
       <div class="form-group">
         <label for="apellido">Apellido</label>
-        <input type="text" id="apellido" v-model="apellido"/>
+        <input type="text" id="apellido" v-model="apellido" />
       </div>
       <div class="form-group">
         <label for="fechaNacimiento">Fecha de Nacimiento</label>
-        <input v-model="fechaNacimiento" type="datetime-local" id="fechaNacimiento" />
+        <input
+          v-model="fechaNacimiento"
+          type="datetime-local"
+          id="fechaNacimiento"
+        />
       </div>
       <div class="form-group">
         <label for="genero">Género</label>
@@ -27,11 +30,16 @@
         <button @click="crear">Guardar</button>
       </div>
     </div>
+    <div class="message" v-if="success">
+      <p style="color: #778A98; font-weight: bold">
+        ¡Estudiante guardado con éxito!
+      </p>
+    </div>
   </div>
 </template>
-  
-  <script>
-import {guardarFachada} from '../helpers/clienteEstudiante';
+
+<script>
+import { guardarFachada } from "../helpers/clienteEstudiante";
 export default {
   data() {
     return {
@@ -39,6 +47,7 @@ export default {
       cedula: null,
       genero: null,
       fechaNacimiento: null,
+      success: false,
     };
   },
   methods: {
@@ -53,10 +62,9 @@ export default {
       console.log(bodyEstudiante);
       const data = await guardarFachada(bodyEstudiante);
       console.log(data);
+      this.success = true;
     },
   },
 };
 </script>
-  <style>
-
-</style>
+<style></style>

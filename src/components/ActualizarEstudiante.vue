@@ -1,23 +1,26 @@
 <template>
   <div class="container">
-    
-      <header>Actualizar datos</header>
-      <div class="form">
-        <div class="form-group">
+    <header>Actualizar datos</header>
+    <div class="form">
+      <div class="form-group">
         <label for="cedula">Cédula</label>
         <input v-model="cedula" type="text" id="cedula" />
       </div>
       <div class="form-group">
-        <label  for="nombre">Nombre</label>
-        <input  v-model="nombre"  type="text" id="nombre" />
+        <label for="nombre">Nombre</label>
+        <input v-model="nombre" type="text" id="nombre" />
       </div>
       <div class="form-group">
         <label for="apellido">Apellido</label>
-        <input type="text" id="apellido" v-model="apellido"/>
+        <input type="text" id="apellido" v-model="apellido" />
       </div>
       <div class="form-group">
         <label for="fechaNacimiento">Fecha de Nacimiento</label>
-        <input v-model="fechaNacimiento" type="datetime-local" id="fechaNacimiento" />
+        <input
+          v-model="fechaNacimiento"
+          type="datetime-local"
+          id="fechaNacimiento"
+        />
       </div>
       <div class="form-group">
         <label for="genero">Género</label>
@@ -35,7 +38,7 @@
 import {
   obtenerPorCedulaAxiosFachada,
   actualizarFachada,
-} from '../helpers/clienteEstudiante';
+} from "../helpers/clienteEstudiante";
 export default {
   data() {
     return {
@@ -62,11 +65,10 @@ export default {
 
     //1998-08-31T00:00:00
     async actualizar() {
-
       const bodyEstudiante = {
         nombre: this.nombre,
         apellido: this.apellido,
-        fechaNacimiento:this.fechaNacimiento,
+        fechaNacimiento: this.fechaNacimiento,
         genero: this.genero,
         cedula: this.cedula,
       };
@@ -74,6 +76,15 @@ export default {
       const data = await actualizarFachada(this.cedula, bodyEstudiante);
       console.log(data);
     },
+  },
+  created() {
+    console.log(this.cedula);
+    console.log(this.$route);
+    if (this.$route.params.cedula !== "vacio") {
+      this.cedula = this.$route.params.cedula;
+      console.log(this.cedula);
+      this.consultar();
+    }
   },
 };
 </script>
